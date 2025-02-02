@@ -15,7 +15,7 @@ then
     source "${my_bash_rc}"
 fi
 
-git config user.email 'liam.ray@cytoreason.com'
-git config user.name 'liam.ray'
+git config --global user.email 'liam.ray@cytoreason.com'
+git config --global user.name 'liam.ray'
 
 ~~~
