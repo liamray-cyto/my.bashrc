@@ -21,6 +21,15 @@ clone() {
         git clone "${url}" "${dir}" && cd "${dir}"
 }
 
+# activate service account
+ggsa() {
+  local sa_path="${1}"
+  if [[ ! -z "${sa_path}" ]]
+  then
+    gcloud auth activate-service-account --key-file="${sa_path}"
+  fi
+}
+
 
 terragrunt_exec='/usr/local/bin/terragrunt'
 if [[ ! -f "${terragrunt_exec}" ]]
