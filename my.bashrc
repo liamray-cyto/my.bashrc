@@ -11,6 +11,10 @@ alias gg='gcloud'
 alias k='kubectl'
 alias po=podman
 alias ll='ls -la'
+alias lll='find "$PWD" -maxdepth 1 -exec realpath {} \;'
+
+git config --global user.email 'liam.ray@cytoreason.com'
+git config --global user.name 'liam.ray'
 
 clone() {
         local url="${1}" dir="${2}"
