@@ -15,6 +15,7 @@ alias lll='find "$PWD" -maxdepth 1 -exec realpath {} \;'
 
 git config --global user.email 'liam.ray@cytoreason.com'
 git config --global user.name 'liam.ray'
+git config --global core.editor "vim"
 
 clone() {
         local url="${1}" dir="${2}"
