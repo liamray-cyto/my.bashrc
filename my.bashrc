@@ -35,7 +35,7 @@ ggsa() {
   fi
 }
 
-difff() {
+dfdf() {
   diff <(cat "${1}") <(cat "${2}")
 }
 
