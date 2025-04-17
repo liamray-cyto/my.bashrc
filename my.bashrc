@@ -35,6 +35,9 @@ ggsa() {
   fi
 }
 
+difff() {
+  diff <(cat "${1}") <(cat "${2}")
+}
 
 terragrunt_exec='/usr/local/bin/terragrunt'
 if [[ ! -f "${terragrunt_exec}" ]]
