@@ -13,6 +13,15 @@ alias po=podman
 alias ll='ls -la'
 alias lll='find "$PWD" -maxdepth 1 -exec realpath {} \;'
 
+mkdir() {
+        if [[ ! -d "${1}" ]]
+        then
+                command mkdir -p "${1}"
+        fi
+
+        cd "${1}"
+}
+
 git config --global user.email 'liam.ray@cytoreason.com'
 git config --global user.name 'liam.ray'
 git config --global core.editor "vim"
