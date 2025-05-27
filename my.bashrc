@@ -27,7 +27,8 @@ t64() {
 }
 
 f64() {
-        echo "${1}" | base64 -d
+        printf "${1}" | base64 -d
+        echo
 }
 
 git config --global user.email 'liam.ray@cytoreason.com'
