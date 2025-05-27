@@ -22,6 +22,14 @@ mkdir() {
         cd "${1}"
 }
 
+t64() {
+        printf "${1}" | base64
+}
+
+f64() {
+        printf "${1}" | base64 -d
+}
+
 git config --global user.email 'liam.ray@cytoreason.com'
 git config --global user.name 'liam.ray'
 git config --global core.editor "vim"
