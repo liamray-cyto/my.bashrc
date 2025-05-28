@@ -31,6 +31,10 @@ f64() {
         echo
 }
 
+sec() {
+  kubectl get secret -n apps -o yaml "${1}" | less
+}
+
 git config --global user.email 'liam.ray@cytoreason.com'
 git config --global user.name 'liam.ray'
 git config --global core.editor "vim"
