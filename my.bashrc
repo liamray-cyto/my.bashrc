@@ -15,6 +15,8 @@ alias lll='find "$PWD" -maxdepth 1 -exec realpath {} \;'
 
 PS1='[\u][$(pwd)]\$'
 
+mkdir -p '/home/coder/ws' '/home/coder/auth0'
+
 mkd() {
         if [[ ! -d "${1}" ]]
         then
