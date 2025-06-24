@@ -13,6 +13,8 @@ alias po=podman
 alias ll='ls -la'
 alias lll='find "$PWD" -maxdepth 1 -exec realpath {} \;'
 
+PS1='[\u][$(pwd)]\$'
+
 mkd() {
         if [[ ! -d "${1}" ]]
         then
