@@ -65,16 +65,17 @@ dfdf() {
   diff <(cat "${1}") <(cat "${2}")
 }
 
+install_locate() {
+  echo "Installing the locate utility"
+  sudo apt install locate -y -qq
+
+  echo "Updating files db"
+  sudo updatedb
+}
+
 terragrunt_exec='/usr/local/bin/terragrunt'
 if [[ ! -f "${terragrunt_exec}" ]]
 then
         sudo wget 'https://github.com/gruntwork-io/terragrunt/releases/download/v0.71.2/terragrunt_linux_amd64' -O "${terragrunt_exec}"
         sudo chmod +x "${terragrunt_exec}"
-fi
-
-# installing the quick file search utility if missing
-if ! which locate > /dev/null
-then
-  sudo apt install locate -y -qq
-  sudo updatedb
 fi
