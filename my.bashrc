@@ -72,3 +72,9 @@ then
         sudo chmod +x "${terragrunt_exec}"
 fi
 
+# installing the quick file search utility if missing
+if ! which locate > /dev/null
+then
+  sudo apt install locate -y -qq
+  sudo updatedb
+fi
