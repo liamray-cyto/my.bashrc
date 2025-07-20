@@ -17,6 +17,10 @@ PS1='[\u][$(pwd)]\$ '
 
 mkdir -p '/home/coder/ws' '/home/coder/auth0'
 
+untar() {
+  tar -xzvf "${1}"
+}
+
 mkd() {
         if [[ ! -d "${1}" ]]
         then
