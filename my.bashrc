@@ -83,3 +83,16 @@ then
         sudo wget 'https://github.com/gruntwork-io/terragrunt/releases/download/v0.71.2/terragrunt_linux_amd64' -O "${terragrunt_exec}"
         sudo chmod +x "${terragrunt_exec}"
 fi
+
+
+# Install Helm v3.17.4 (Linux, amd64) to /usr/local/bin from tarball in /tmp
+helm_exec='/usr/local/bin/helm'
+if [[ ! -f "${helm_exec}" ]]; then
+    helm_url="https://get.helm.sh/helm-v3.17.4-linux-amd64.tar.gz"
+    helm_tar="/tmp/helm-v3.17.4-linux-amd64.tar.gz"
+    curl -L "${helm_url}" -o "${helm_tar}"
+    tar -xzvf "${helm_tar}" -C /tmp
+    sudo mv /tmp/linux-amd64/helm "${helm_exec}"
+    sudo chmod +x "${helm_exec}"
+    rm -rf /tmp/linux-amd64 "${helm_tar}"
+fi
