@@ -31,7 +31,7 @@ mkd() {
 }
 
 t64() {
-        printf "${1}" | base64
+        printf "${1}" | base64 -w0
 }
 
 f64() {
