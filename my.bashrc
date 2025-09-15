@@ -80,7 +80,7 @@ install_locate() {
 terragrunt_exec='/usr/local/bin/terragrunt'
 if [[ ! -f "${terragrunt_exec}" ]]
 then
-        sudo wget 'https://github.com/gruntwork-io/terragrunt/releases/download/v0.71.2/terragrunt_linux_amd64' -O "${terragrunt_exec}"
+        sudo wget 'https://github.com/gruntwork-io/terragrunt/releases/download/v0.87.2/terragrunt_linux_amd64' -O "${terragrunt_exec}"
         sudo chmod +x "${terragrunt_exec}"
 fi
 
