@@ -96,3 +96,21 @@ if [[ ! -f "${helm_exec}" ]]; then
     sudo chmod +x "${helm_exec}"
     rm -rf /tmp/linux-amd64 "${helm_tar}"
 fi
+
+
+jwt() {
+  local token="$1"
+  local header payload
+
+  header=$(echo "$token" | cut -d "." -f1 | base64 -d 2>/dev/null)
+  payload=$(echo "$token" | cut -d "." -f2 | base64 -d 2>/dev/null)
+
+  echo "===== Header ====="
+  echo "$header" | jq .
+
+  echo "===== Payload ====="
+  echo "$payload" | jq .
+}
+
+
+
